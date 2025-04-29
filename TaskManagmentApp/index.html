@@ -1,0 +1,100 @@
+<script src="node_modules/angular/angular.min.js"></script>
+<!DOCTYPE html>
+<html ng-app="taskManagmentApp">
+    <head>
+        <title>Task Manager</title>
+        <h2 style="text-align: center;">All your tasks in one place<br>with <span style="color: blue;">NOVI™</span> app!
+        </h2>
+        <!-- Template's Custom CSS -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+<body ng-controller="TaskController">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <span style="color: blue;">NOVI™</span> Task Management
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Try your new favorite task organizer below! </h1>
+    </div>
+
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="app.js"></script>
+
+
+
+<div class="container">
+<form ng-submit="addTask()" class="form-group">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" ng-model="task.title" class="form-control" placeholder="Enter Task Title" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea id="description" ng-model="task.description" class="form-control" placeholder="Enter Task Description" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="priority" class="form-label">Priority:</label>
+        <select id="priority" ng-model="task.priority" class="form-select">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Task</button>
+</form>
+</div>
+
+<div class="container mt-5">
+<p ng-show="tasks.length === 0" class="text-center text-muted">No tasks to display. Add a new task to get started!</p>
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Priority</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="task in tasks">
+            <td>{{task.title}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.priority}}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" ng-click="deleteTask(task.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+</body>
+</html>
