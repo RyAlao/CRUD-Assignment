@@ -17,12 +17,12 @@ This app provides a simple yet effective task management system for tracking dai
 - Open your terminal and clone the project.
 - Navigate into the project folder.
 - Start the Backend (Spring Boot)
-- Open the backend folder in your code editor.
+- Open the backend folder(demo) in your code editor.
 - Ensure Java & Maven are installed.
 - Run the command to start the Spring Boot server.
 - The server will start at http://localhost:8082.
 - Run the Frontend (AngularJS)
-- Navigate to the frontend folder.
+- Navigate to the frontend folder(TaskManagementApp).
 - Open index.html using Live Server in VS Code or another local browser setup.
 - Test the App Functionality
 - Add tasks using the input form.
